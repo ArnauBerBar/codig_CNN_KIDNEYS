@@ -176,11 +176,10 @@ with torch.no_grad():
             plt.imshow(test_patient["label"][0, 0, :, :, sl_position] != 0) #Ponemos la máscara de segmentación manual del corte X de la RM en el plot
             plt.subplot(1, 4, 3)
             plt.title(f"prediction U-Net {i}, slice: {sl_position}")
-            plt.imshow(test_outputs_UNet.detach().cpu()[0, 1, :, :, sl_position]) #Ponemos la máscara de segmentación predicha por el modelo 3D U-Net del corte X de la RM en el plot
+            plt.imshow(test_outputs_UNet.detach().cpu()[0, 1, :, :, sl_position]) #Máscara de segmentación predicha 3D U-Net del corte X de la RM en el plot
             plt.subplot(1, 4, 4)
             plt.title(f"prediction SegResNet {i}, slice: {sl_position}")
-            plt.imshow(test_outputs_segresnet.detach().cpu()[0, 1, :, :, sl_position]) #Ponemos la máscara de segmentación predicha por el modelo 3D SegResNet del corte X de la RM en el plot
-            plt.show()
+            plt.imshow(test_outputs_segresnet.detach().cpu()[0, 1, :, :, sl_position]) #Máscara de segmentación predicha por 3D SegResNet del corte X de la RM 
         
         count += 1
 
