@@ -1,4 +1,4 @@
-#Función para el cálculo de los volúmenes renales
+
 import nibabel as nib
 import numpy as np
 import os
@@ -26,7 +26,7 @@ from monai.transforms import (
     RandAffined,
     ToTensord,
     Activations)
-
+#Función para el cálculo de los volúmenes renales
 def calculate_volume_nifti(nifti_file):
     nii = nib.load(nifti_file)
     img = nii.get_fdata() 
